@@ -1,6 +1,15 @@
 def pig_latin(sentence):
-    # Write your solution here!
-    pass
+    result = []
+
+    for word in sentence.split():
+        if word[0].lower() in ['a', 'e', 'i', 'o', 'u']:
+            result.append(word)
+        else:
+            new_word = word[1:] + word[0] + 'ay'
+            result.append(new_word)
+
+    return ' '.join(result)
+
 
 # Test cases
 assert pig_latin("something") == "omethingsay"
